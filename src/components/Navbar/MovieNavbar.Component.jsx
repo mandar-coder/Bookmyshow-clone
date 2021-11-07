@@ -37,7 +37,7 @@ function NavLg() {
                         />
                     </div>
                     <div className="hidden lg:flex md:flex items-center gap-5">
-                            <a href=""><button className="text-red-600 bg-transparent  ">About</button></a>
+                            <a href="About.html"><button className="text-red-600 bg-transparent  ">About</button></a>
                         </div>
                         <div className="hidden lg:flex md:flex items-center gap-5">
                         <a href="contact.html"><button className="text-red-600 bg-transparent " > Contact Us</button></a>

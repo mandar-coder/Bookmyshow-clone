@@ -19,16 +19,13 @@ function Footer() {
 
         <div class=" flex gap-7 text-center">
             <li>
-                <a className="text-md w-10 h-10 inline-block text-center rounded-lg my-1 ">Home</a>
+                <a href="index.html" className="text-md w-10 h-10 inline-block text-center rounded-lg my-1 ">Home</a>
             </li>
             <li>
-                <a className="text-md w-10 h-10 inline-block text-center rounded-lg my-1 ">Services</a>
+                <a href="contact.html" className="text-md w-10 h-10 inline-block text-center rounded-lg my-1 ">Contact</a>
             </li>
             <li>
-                <a className="text-md w-10 h-10 inline-block text-center rounded-lg my-1 ">About</a>
-            </li>
-            <li>
-                <a className="text-md w-10 h-10 inline-block text-center rounded-lg my-1 ">Home</a>
+                <a href="About.html" className="text-md w-10 h-10 inline-block text-center rounded-lg my-1 ">About</a>
             </li>
             <li>
                 <a className="text-md w-10 h-10 inline-block text-center rounded-lg my-1 ">Terms</a>
