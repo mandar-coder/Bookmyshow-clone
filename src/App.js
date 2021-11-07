@@ -1,102 +1,31 @@
-import React, { useState, useEffect } from "react";
-import fire from './fire';
-import Login from './components/Login';
-import DefaultLayout from "./Layouts/Default.Layout";
-import './App.css';
+import React from "react";
+import axios from "axios";
+
+// Import css files
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+//Higher Order Components
+import DefaultHOC from "./HOC/Default.HOC";
+import MovieHOC from "./HOC/Movie.HOC";
+
+//Pages
+import HomePage from "./pages/Home.Page";
+import MoviePage from "./pages/Movie.Page";
+import Plays from "./pages/Plays.Page";
+
+axios.defaults.baseURL = "https://api.themoviedb.org/3";
+axios.defaults.params = {};
+axios.defaults.params["api_key"] = process.env.REACT_APP_API_KEY;
 
 
-const App = () =>  {
-  const [user, setUser] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [passwordError, setPasswordError] = useState('');
-  const [hasAccount, setHasAccount] = useState(false);
-
-  const clearInputs = () => {
-    setEmail('');
-    setPassword('');
-  }
-
-  const clearErrors = () => {
-     setEmailError('');
-     setPasswordError('');
-  }
-
-  const handleLogin = () => {
-    clearErrors();
-    fire.auth()
-    .signInWithEmailAndPassword(email, password)
-    .catch(err => {
-      switch(err.code){
-        case "auth/invalid-email":
-        case "auth/user-disabled":
-        case "auth/user-not-found":
-          setEmailError(err.message);
-          break;
-        case "auth/wrong-password":
-          setPasswordError(err.message);
-          break;  
-      }
-    });
-  };
-
-  const handleSignup = () => {
-    clearErrors();
-    fire
-    .auth()
-    .createUserWithEmailAndPassword(email, password)
-    .catch(err => {
-      switch(err.code){
-        case "auth/email-already-in-use":
-        case "auth/invalid-email":
-          setEmailError(err.message);
-          break;
-        case "auth/weak-password":
-          setPasswordError(err.message);
-          break;  
-      }
-    });
-  };
-
-  const handleLogout = () => {
-    fire.auth().signOut();
-  };
-
-  const authListener = () => {
-    fire.auth().onAuthStateChanged(user => {
-      if(user){
-        clearInputs();
-        setUser(user);
-      } else{
-        setUser("");
-      }
-    })
-  };
-
-  useEffect (() => {
-    authListener();
-  } , [])
-
-  return (
-    <div className="App">
-      {user ? (
-        <DefaultLayout handleLogout={handleLogout} />
-      ):(
-        <Login email={email} 
-          setEmail={setEmail} 
-          password={password} 
-          setPassword={setPassword} 
-          handleLogin={handleLogin} 
-          handleSignup={handleSignup} 
-          hasAccount={hasAccount} 
-          setHasAccount={setHasAccount}
-          emailError={emailError}
-          passwordError={passwordError}
-           /> 
-      )}           
-    </div>
-  );
-};
-
+function App() {
+    return (
+        <>
+            <DefaultHOC path="/" exact component={HomePage} />
+            <MovieHOC path="/movie/:id" exact component={MoviePage} />
+            <DefaultHOC path="/plays" exact component={Plays} />
+        </>
+    );
+}
 export default App;
