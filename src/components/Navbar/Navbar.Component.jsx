@@ -1,7 +1,5 @@
 import {useState} from "react";
 import { BiChevronDown, BiMenu, BiSearch } from "react-icons/bi";
-import About from "../About/About.component"
-import contact from "../Navbar/MovieNavbar.Component"
 
 
 function NavSm() {
@@ -48,7 +46,6 @@ function NavMd() {
 function NavLg() {
     return (
         <>
-        {/* <About isOpen={openAbout} setIsOpen={setOpenAbout} /> */}
         <section className=" w-full bg-black ">
         <div className=" bg-black flex mx-auto py-3 px-4 items-center justify-between">
                 <div className="flex items-center gap-6">
@@ -60,10 +57,10 @@ function NavLg() {
                         />
                     </div>
                     <div className="hidden lg:flex md:flex items-center gap-5">
-                           <a href="About.html"> <button className="text-red-600 bg-transparent ">About</button></a>
+                            <button className="text-red-600 bg-transparent ">About</button>
                         </div>
                         <div className="hidden lg:flex md:flex items-center gap-5">
-                        <a href="contact.html"><button className="text-red-600 bg-transparent">Contact Us</button></a>
+                       <button className="text-red-600 bg-transparent">Contact Us</button>
                         </div>
                 </div>
                 <div className="flex items-center w-1/2 gap-3">

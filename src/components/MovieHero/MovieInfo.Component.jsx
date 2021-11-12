@@ -41,12 +41,12 @@ const MovieInfo = ({ movie }) => {
                     >
                         Book ₹149
                     </button>
-                    {/* <button
+                    <button
                         onClick={butMovies}
                         className="bg-red-500 w-full py-3 text-white font-semibold rounded-lg"
                     >
                         Buy ₹599
-                    </button> */}
+                    </button>
                 </div>
             </div>
         </>
