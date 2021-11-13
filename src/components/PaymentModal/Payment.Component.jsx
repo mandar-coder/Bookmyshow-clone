@@ -24,7 +24,6 @@ export default function PaymentModal({ isOpen, setIsOpen, price }) {
         let razorPay = new window.Razorpay(options);
         razorPay.open();
     }
-    
 
     return (
         <>
@@ -70,13 +69,20 @@ export default function PaymentModal({ isOpen, setIsOpen, price }) {
                                 >
                                     Please make a payment
                                 </Dialog.Title>
+                                <div className="mt-2">
+                                    <p className="text-sm text-gray-500">
+                                        Hello please click on the below button
+                                        to make a payment.
+                                    </p>
+                                </div>
+
                                 <div className="w-full mt-4">
                                     <button
                                         type="button"
                                         className="w-full inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-red-500 border border-transparent rounded-md hover:bg-red-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500"
                                         onClick={launchRazorPay}
                                     >
-                                        Pay 
+                                        Pay ₹ {price}
                                     </button>
                                     <button
                                         type="button"

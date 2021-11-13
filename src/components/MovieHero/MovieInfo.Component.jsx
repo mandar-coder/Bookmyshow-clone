@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import PaymentModal from "../PaymentModal/Payment.Component";
-import RentModal from "../PaymentModal/Rent.Component";
 
 const MovieInfo = ({ movie }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +21,6 @@ const MovieInfo = ({ movie }) => {
     return (
         <>
             <PaymentModal setIsOpen={setIsOpen} isOpen={isOpen} price={price} />
-            {/* <RentModal/> */}
             <div className="flex flex-col gap-8">
                 <h1 className="text-white text-5xl font-bold">
                     {movie.original_title}
@@ -39,7 +37,7 @@ const MovieInfo = ({ movie }) => {
                         onClick={rentMovies}
                         className="bg-red-500 w-full py-3 text-white font-semibold rounded-lg"
                     >
-                        Book ₹149
+                        Rent ₹149
                     </button>
                     <button
                         onClick={butMovies}

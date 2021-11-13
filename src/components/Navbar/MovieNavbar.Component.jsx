@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { BiChevronDown, BiMenu, BiSearch, BiShareAlt } from "react-icons/bi";
+
 //Context
 import { MovieContext } from "../../context/Movie.context";
 
@@ -25,9 +26,8 @@ function NavSm() {
 function NavLg() {
     return (
         <>
-            <section className="Hero w-full">
-        <div className="container bg-black py-3 flex mx-auto px-4 items-center justify-between">
-                <div className="flex items-center gap-6 w-full">
+            <div className="container flex mx-auto px-4 items-center justify-between">
+                <div className="flex items-center w-1/2 gap-3">
                     <div className="w-10 h-10">
                         <img
                             src="https://i.ibb.co/zPBYW3H/imgbin-bookmyshow-office-android-ticket-png.png"
@@ -35,14 +35,6 @@ function NavLg() {
                             className="w-full h-full"
                         />
                     </div>
-                    <div className="hidden lg:flex md:flex items-center gap-5">
-                            <a href="About.html"><button className="text-red-600 bg-transparent  ">About</button></a>
-                        </div>
-                        <div className="hidden lg:flex md:flex items-center gap-5">
-                        <a href="contact.html"><button className="text-red-600 bg-transparent " > Contact Us</button></a>
-                        </div>
-                </div>
-                <div className="flex items-center w-1/2 gap-3">
                     <div className="w-full flex items-center gap-3 bg-white  px-3 py-1 rounded-md">
                         <BiSearch />
                         <input
@@ -51,12 +43,19 @@ function NavLg() {
                             placeholder="Search for movies, events, plays, sports and activities"
                         />
                     </div>
-                    <button className="bg-red-600 w-52 text-white px-4 py-1 text-lg rounded">
-                        Logout
+                </div>
+                <div className="flex items-center gap-3">
+                    <span className="text-gray-200 text-base flex items-center cursor-pointer hover:text-white">
+                        Delhi NCR <BiChevronDown />
+                    </span>
+                    <button className="bg-red-600 text-white px-2 py-1 text-sm rounded">
+                        Sign In
                     </button>
+                    <div className="w-8 h-8 text-white">
+                        <BiMenu className="w-full h-full" />
+                    </div>
                 </div>
             </div>
-        </section>
         </>
     );
 }

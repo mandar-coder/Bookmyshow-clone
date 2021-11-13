@@ -1,19 +1,10 @@
-import {useState} from "react";
+import React from "react";
 import { BiChevronDown, BiMenu, BiSearch } from "react-icons/bi";
 
-
 function NavSm() {
-
-    // const [isOpen, setIsOpen] = useState(true)
-
-    // const openAboutModal = () => {
-    //     setOpenAbout(true);
-    // }
-
     return (
-        
         <>
-            <div className="text-white bg-black flex items-center justify-between">
+            <div className="text-white flex items-center justify-between">
                 <div>
                     <h3 className="text-xl font-bold">It All Starts Here!</h3>
                     <span className="text-gray-400 text-xs flex items-center cursor-pointer hover:text-white">
@@ -31,7 +22,7 @@ function NavSm() {
 function NavMd() {
     return (
         <>
-            <div className="w-full bg-black flex items-center gap-3 bg-white  px-3 py-1 rounded-md">
+            <div className="w-full flex items-center gap-3 bg-white  px-3 py-1 rounded-md">
                 <BiSearch />
                 <input
                     type="search"
@@ -46,9 +37,8 @@ function NavMd() {
 function NavLg() {
     return (
         <>
-        <section className=" w-full bg-black ">
-        <div className=" bg-black flex mx-auto py-3 px-4 items-center justify-between">
-                <div className="flex items-center gap-6">
+            <div className="container flex mx-auto px-4 items-center justify-between">
+                <div className="flex items-center w-1/2 gap-3">
                     <div className="w-10 h-10">
                         <img
                             src="https://i.ibb.co/zPBYW3H/imgbin-bookmyshow-office-android-ticket-png.png"
@@ -56,14 +46,6 @@ function NavLg() {
                             className="w-full h-full"
                         />
                     </div>
-                    <div className="hidden lg:flex md:flex items-center gap-5">
-                            <button className="text-red-600 bg-transparent ">About</button>
-                        </div>
-                        <div className="hidden lg:flex md:flex items-center gap-5">
-                       <button className="text-red-600 bg-transparent">Contact Us</button>
-                        </div>
-                </div>
-                <div className="flex items-center w-1/2 gap-3">
                     <div className="w-full flex items-center gap-3 bg-white  px-3 py-1 rounded-md">
                         <BiSearch />
                         <input
@@ -72,12 +54,19 @@ function NavLg() {
                             placeholder="Search for movies, events, plays, sports and activities"
                         />
                     </div>
-                    <button className="bg-red-600 w-52 text-white px-4 py-1 text-lg rounded">
-                        Logout
+                </div>
+                <div className="flex items-center gap-3">
+                    <span className="text-gray-200 text-base flex items-center cursor-pointer hover:text-white">
+                        Delhi NCR <BiChevronDown />
+                    </span>
+                    <button className="bg-red-600 text-white px-2 py-1 text-sm rounded">
+                        Sign In
                     </button>
+                    <div className="w-8 h-8 text-white">
+                        <BiMenu className="w-full h-full" />
+                    </div>
                 </div>
             </div>
-        </section>
         </>
     );
 }
