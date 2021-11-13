@@ -4,10 +4,9 @@ import { useParams } from "react-router-dom";
 
 //Component
 import MovieNavbar from "../components/Navbar/MovieNavbar.Component";
+
 //Context
 import { MovieContext } from "../context/Movie.context";
-
-
 
 const MovieLayout = (props) => {
     const { id } = useParams();
@@ -25,6 +24,7 @@ const MovieLayout = (props) => {
         <div>
             <MovieNavbar />
             {props.children}
+            <div>Footer</div>
         </div>
     );
 };
