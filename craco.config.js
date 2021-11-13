@@ -1,12 +1,8 @@
 // craco.config.js
 module.exports = {
-    style: {
+  style: {
       postcss: {
-        plugins: [
-          require('tailwindcss'),
-          require('autoprefixer'),
-        ],
+          plugins: [require("tailwindcss"), require("autoprefixer")],
       },
-    },
-  }
-  
+  },
+};

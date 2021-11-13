@@ -1,32 +1,38 @@
 module.exports = {
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+      extend: {
+          colors: {
+              darkBackground: {
+                  50: "#edf1fc",
+                  100: "#d3d4e1",
+                  200: "#b6b8c9",
+                  300: "#989bb2",
+                  400: "#7c7f9b",
+                  500: "#636582",
+                  600: "#4c4f66",
+                  700: "#363849",
+                  800: "#21222e",
+                  900: "#0a0a16",
+              },
+              premier: {
+                  50: "#edf4fd",
+                  100: "#ced7e5",
+                  200: "#afbbcf",
+                  300: "#909fbb",
+                  400: "#7081a7",
+                  500: "#57668e",
+                  600: "#444d6f",
+                  700: "#303650",
+                  800: "#2b3147",
+                  900: "#080d17",
+              },
+          },
+      },
   },
   variants: {
-    extend: {},
+      extend: {},
   },
   plugins: [],
-}
-
-module.exports = {
-  theme: {
-    screens: {
-      'sm': '640px',
-      // => @media (min-width: 640px) { ... }
-
-      'md': '768px',
-      // => @media (min-width: 768px) { ... }
-
-      'lg': '1024px',
-      // => @media (min-width: 1024px) { ... }
-
-      'xl': '1280px',
-      // => @media (min-width: 1280px) { ... }
-
-      '2xl': '1536px',
-      // => @media (min-width: 1536px) { ... }
-    }
-  }
-}
+};
